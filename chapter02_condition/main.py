@@ -81,6 +81,8 @@ if 조건식1:
         1) and : A and B -> A와 B가 모두 참일 때 실행문 실행
         2) or : A or B -> A 혹은 B 중에 하나가 참이면 실행문 실행
         3) not : if not A -> A가 false일 때 실행문 실행
+        
+    && / ||
 '''
 age = 25
 has_ticket = True
@@ -91,3 +93,7 @@ if age >= 19 and has_ticket:
 else:
     print("입장할 수 없습니다.")
 
+'''
+chapter02_condition 우클릭 - new - pacakage - leap_year package 생성
+leap_year 우클릭 - new - python file - main 생성
+'''
