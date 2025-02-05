@@ -189,6 +189,53 @@ while not at_goal():
         jump()
     else:
         move()
+        
+        
+hurdle # 4
+
+def turn_right():
+    for _ in range(3):
+        turn_left()
+        
+def jump():    # 한 칸의 장애물만 넘을 수 있음
+    turn_left()
+    while wall_on_right():
+        move()    # 몇 칸이나 올라갈지 모름    
+    turn_right()
+    move()    
+    turn_right()
+    while not wall_in_front():
+        move()    # 올라간 만큼 내려와야 함
+    turn_left()
+    
+while not at_goal():
+    # 막히면 jump, 안막히면 move
+    if wall_in_front():
+        jump()
+    else:
+        move() 
+        
+        
+hurdle #1 ~ 4 / maze를 통과하는 우수법 코드 적용 사례
+
+def turn_right():
+    for _ in range(3):
+        turn_left()
+    
+while not at_goal():
+    # 오른쪽만 막혀있을 때 -> 앞으로
+    # 오른쪽과 앞이 막혀있을 때 -> 왼쪽으로
+    # 오른쪽이 비어있을 때 -> 오른쪽으로
+    # 8번라인처럼 오른쪽만 가면 앞으로 튀어나갈 수 있음
+    # right_is_clear()일때 오른쪽으로 간 다음
+    # 앞으로 한 칸 움직여서 벽을 넘어서는 과정까지
+    if wall_on_right() and front_is_clear():
+        move()
+    elif wall_on_right() and wall_in_front():
+        turn_left()
+    elif right_is_clear():
+        turn_right()
+        move()
 '''
 
 
