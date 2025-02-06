@@ -124,15 +124,38 @@ print() 함수를 입력할 필요가 없어 훨씬 편할 것 같은데
     그리고 함수2의 결과 값이 함수3의 argument로 사용되는 것이 반복된다면,
 '''
 # 사용자 함수를 정의
-def introduce(name, address):           # call4() 유형으로 정의
-    return f"제 이름은 {name}이고, {address}에 삽니다.😀"
+# def introduce(name, address):           # call4() 유형으로 정의
+#     return f"제 이름은 {name}이고, {address}에 삽니다.😀"
 
 # 함수1 사용 : input() -> 파이썬 내장 함수
-name = input("이름을 입력하세요 >>> ")
-address = input("주소를 입력하세요 >>> ")
+# name = input("이름을 입력하세요 >>> ")
+# address = input("주소를 입력하세요 >>> ")
 
 # 함수1의 결과값을 함수2인 사용자 함수의 argument로 사용 -> 그 결과값을 함수3인 print()함수의 argument로 사용
-print(introduce(name, address))
+# print(introduce(name, address))
+'''
+700원 짜리 음료수를 뽑을 수 있는 자판기 프로그램을 구현하시오. 돈을 넣으면 몇 잔의 음료수를
+뽑을 수 있는지, 그리고 잔돈은 얼마인지 모든 경우의 수를 출력하도록 합니다.
+
+함수 정의
+- 반환값 : 없음(call1-4 중 어떤 유형일지 고려하세요)
+- 함수이름 : vending_machine()
+- 매개변수 : 정수 money
+
+코드 구성
+
+def vending_machine():
+    # 함수 구현
+    
+vending_machine(3000)
+
+실행 예
+음료수 = 0개, 잔돈 = 3000원
+음료수 = 1개, 잔돈 = 2300원
+음료수 = 2개, 잔돈 = 1600원
+음료수 = 3개, 잔돈 = 900원
+음료수 = 4개, 잔돈 = 200원
+'''
 
 
 
