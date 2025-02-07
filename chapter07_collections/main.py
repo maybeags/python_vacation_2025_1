@@ -6,10 +6,10 @@ string의 경우 문자 하나 하나를 줄(str)로 묶어서 문자열로 출�
 
 여러 명의 프로필을 관리한다고 가정해보겠습니다.
 '''
-ahngeunsu = "이름 : 안근수\n나이 : 38\n직업 : 파이썬 강사"        # \n하면 개행 이루어짐
-print(ahngeunsu)
-kimrandom = "이름 : 김랜덤\n나이 : 20\n직업 : 학생"
-print(kimrandom)
+# ahngeunsu = "이름 : 안근수\n나이 : 38\n직업 : 파이썬 강사"        # \n하면 개행 이루어짐
+# print(ahngeunsu)
+# kimrandom = "이름 : 김랜덤\n나이 : 20\n직업 : 학생"
+# print(kimrandom)
 '''
 한 명 저장하는 데에는 문제가 없을 수 있지만 매번 변수 하나에 이름, 나이, 직업 등을 한 명 추가할 때마다
 정리하는 것인 비효율적이고, 예를 들어서 ahngeunsu에서 직업만 조회하고 싶어도 전체 정보를 다 확인해야 합니다.
@@ -29,3 +29,51 @@ print(kimrandom)
     하나의 배열(파이썬에서 리스트와 비슷한 개념)에 동일한 자료형만을 저장할 수 있는 C, Java에 비해
     python이 가지는 장점이라고 할 수 있음.
 '''
+# li = [ 1, 2, 3, "안근수" ]
+# print(li)
+'''
+    1-1. list의 index와 slice
+        list는 str과 동일한 방식의 index와 slicing을 지원함.
+        1) 인덱스와 마이너스 인덱스
+'''
+# print(li[0])
+# print(li[1])
+# print(li[2])
+# print(li[3])
+# print(li[-1])
+# print(li[-2])
+# print(li[-3])
+# print(li[-4])
+'''
+        2) slice
+        str의 슬라이싱과 같이 '시작인덱스:종료인덱스:증감값'으로 이루어져 있음.
+'''
+# list_num1 = [100, 3.14, "hello"]        # list 생성 방법 # 1
+# list_num2 = list( [4,5,6,7,8,9] )       # list 생성 방법 # 2
+# print(list_num1)
+# print(list_num2[0:4:2])
+'''
+        3) list 요소의 추가와 삭제
+        list에 새로운 요소를 추가할 때는 .append()와 .insert() '메서드'를 사용할 수 있습니다.
+        기존 요소를 삭제할 때는 .pop() 메서드를 사용합니다.
+        
+        .append() - 항상 마지막 인덱스에 요소를 추가하는 메서드
+        .insert(위치, 값) - 정해진 위치(인덱스)에 해당 값을 추가하는 메서드
+'''
+scores = [30, 40, 50]
+print(scores)
+scores.append(100)
+print(scores)
+
+
+
+
+
+
+
+
+
+
+
+
+
