@@ -294,40 +294,243 @@ list에서 2 번째 요소를 출력하는 프로그램을 작성하시오.
 1 ~ 12 사이의 월을 입력하세요 >>> 2
 2월은 28일까지입니다.
 '''
-month = input("1 ~ 12 사이의 월을 입력하세요 >>> ")
-
-month_int = int(month)
+# month = input("1 ~ 12 사이의 월을 입력하세요 >>> ")
+#
+# month_int = int(month)
 
 # last_dates = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 # print(f"{month_int}월은 {last_dates[month_int-1]}일까지 있습니다.")
 
-last_date_dict = {
-    "1": 31,
-    "2": 28,
-    "3": 31,
-    "4": 30,
-    "5": 31,
-    "6": 30,
-    "7": 31,
-    "8": 31,
-    "9": 30,
-    "10": 31,
-    "11": 30,
-    "12": 31,
-}
+# last_date_dict = {
+#     "1": 31,
+#     "2": 28,
+#     "3": 31,
+#     "4": 30,
+#     "5": 31,
+#     "6": 30,
+#     "7": 31,
+#     "8": 31,
+#     "9": 30,
+#     "10": 31,
+#     "11": 30,
+#     "12": 31,
+# }
 # print(f"{month}월은 {last_date_dict[month]}일까지 있습니다.")
+#
+# last_dates_short = [28, 30, 31]
+#
+# if month_int == 2:
+#     last_date = last_dates_short[0]
+# elif month_int == 4 or month_int == 6 or month_int == 9 or month_int == 11:
+#     last_date = last_dates_short[1]
+# elif month_int in [1, 3, 5, 7, 8, 10, 12]:      # in 뒤에 collections 중에 하나가 오면 됨 (), set{}, [] 가능
+#     last_date = last_dates_short[2]
+# else:
+#     print("잘못입력하셨습니다.")
+#     last_date = "x"
+#
+#
+# print(f"{month}월은 {last_date}일까지 있습니다.")
+'''
+수학 여행을 어디로 갈 지 결정하기 위해 학생들이 희망하는 모든 수학 여행 장소를 조사하기로 했습니다.
+학생들이 원하는 장소를 입력 받아 동일한 입력을 무시하고 모든 입력을 저장하려고 합니다.
+학생을 3 명으로 가정하고 실행 예와 같이 동작하는 프로그램을 작성하시오.
 
-last_dates_short = [28, 30, 31]
+실행 예
 
-if month_int == 2:
-    last_date = last_dates_short[0]
-elif month_int == 4 or month_int == 6 or month_int == 9 or month_int == 11:
-    last_date = last_dates_short[1]
-elif month_int in (1, 3, 5, 7, 8, 10, 12):
-    last_date = last_dates_short[2]
-else:
-    print("잘못입력하셨습니다.")
-    last_date = "x"
+희망하는 수학여행지를 입력하세요 >>> 제주
+희망하는 수학여행지를 입력하세요 >>> 제주
+희망하는 수학여행지를 입력하세요 >>> 민속촌
+
+조사된 수학여행지는 {'제주', '민속촌'}입니다.
+조사된 수학여행지는 ['제주', '민속촌']입니다.
+'''
+# 비어있는 list / set를 생성
+# field_trip_list = []
+# field_trip_set = set({})
+
+# 반복문 적용
+# for i in range(3):
+#     student = input("희망하는 수학여행지를 입력하세요 >>> ")
+#     field_trip_list.append(student)
+#     field_trip_set.add(student)
+#     # field_trip_list = [student] #얘를 사용할 경우 [student]로 매번 초기화
+#
+# # field_trip_set = set(field_trip_list)
+#
+# # print(f"조사된 수학여행지는 {field_trip_list}입니다.")
+# print(f"조사된 수학여행지는 {field_trip_set}입니다.")
+# print(f"조사된 수학여행지는 {list(field_trip_set)}입니다.")
+
+'''
+짝수만 추출하기
+
+사용자로부터 임의의 양의 정수를 입력 받고, 그 정수만큼 숫자를 입력 받아 list에 저장하세요.
+이 후 저장된 숫자 중 짝수만 새로운 list에 저장하여 출력하는 프로그램을 작성하세요.
+
+실행 예
+몇 개의 숫자를 입력할까요? >>> 5
+1번째 숫자를 입력하세요 >>> 10
+2번째 숫자를 입력하세요 >>> 15
+3번째 숫자를 입력하세요 >>> 20
+4번째 숫자를 입력하세요 >>> 25
+5번째 숫자를 입력하세요 >>> 30
+입력 받은 숫자는 [5, 10, 15, 20, 25, 30]입니다.
+입력 받은 숫자들 중 짝수는 [10, 20, 30]입니다.
+'''
+# li_original = []    # 전체 숫자들을 다 저장할 list
+# li_even = []        # 짝수들만 저장할 list
+
+# 몇 개의 숫자를 입력 받을지 input 작성(-> 인덱스 넘버가 얼마짜리인 list를 만들 것인가를 묻는거죠)
+
+# 인덱스 넘버의 숫자만큼 요소를 입력하는 input 함수가 반복돼야 함. -> 반복문
+
+# 그 요소에 해당하는 숫자가 홀수라면 두 번째 리스트에 저장되면 x 짝수라면 저장돼야 함. -> 얘는 조건문
+# index_num = int(input("몇 개의 숫자를 입력할까요? >>> "))
+#
+# for i in range(index_num):
+#     num = int(input(f"{i+1}번째 숫자를 입력하세요 >>> "))
+#     li_original.append(num)
+#
+# print(f"입력 받은 숫자는 {li_original}입니다.")
+
+# 예를 들어 첫 번째 문제만 해결하고 짝수들만 뽑아내는 조건문을 작성하시겠다면
+# li_original을 반복문 돌려서 요소들만 추출하고, 그 요소들이 홀/짝수 중 어디에 해당되는지를
+# 반복문+조건문으로 풀이할 필요가 있습니다.
+# 원래대로라면 첫 번째 반복문 내에서 전부 해결할 수 있지만 향상된 for문 예시를 위해 반복문을
+# 두 번 돌리도록 수업하겠습니다.
+
+# 향상된 for문
+# for num in li_original:
+#     if num % 2 == 0:            # 꼭 else를 써야하는 것은 아닙니다.
+#         li_even.append(num)
+#
+# print(f"입력 받은 숫자 중 짝수는 {li_even}입니다.")
+
+# 진짜 다 압축한 풀이
+
+# li_original2 = []
+# li_even2 = []
+# for i in range(int(input("몇 개의 숫자를 입력하시겠습니까? >>> "))):
+#     num2 = int(input(f"{i+1}번째 숫자를 입력하세요 >>> "))
+#     li_original2.append(num2)   #일단 입력 받은건 li2에 전부 추가
+#     if num2 % 2 == 0:
+#         li_even2.append(num2)   #그리고 그 숫자가 짝수라면 even2에도 추가
+#                                 # 아니면 다음 반복으로
+# print(f"입력 받은 숫자는 {li_original2}입니다.")
+# print(f"입력 받은 숫자 중 짝수는 {li_even2}입니다.")
+
+'''
+딕셔너리 기반의 연락처 관리
+
+사용자로부터 3 명의 이름과 전화번호를 입력 받아 딕셔너리에 저장한 뒤, 입력한 정보를 추출하는
+프로그램을 작성하시오.
+
+실행 예
+1 번째 사람의 이름의 입력하세요 >>> 김일
+1 번째 사람의 연락처를 입력하세요 >>> 010-1234-5678
+2 번째 사람의 이름의 입력하세요 >>> 김이
+2 번째 사람의 연락처를 입력하세요 >>> 010-2345-6789
+3 번째 사람의 이름의 입력하세요 >>> 김삼
+3 번째 사람의 연락처를 입력하세요 >>> 010-3456-7890
+
+입력 받은 연락처는 {'김일':'010-1234-5678', '김이':'010-2345-6789', '김삼':'010-3456-7890'}입니다.
+'''
+# telephones = {}         # 비어있는 딕셔너리를 선언하는 방식
+# for i in range(3):
+#     dict_key = input(f"{i+1} 번째 사람의 이름을 입력하세요 >>> ")
+#     dict_value = input(f"{i+1} 번째 사람의 연락처를 입력하세요 >>> ")
+#
+#     # 딕셔너리에 element를 추가하는 방법
+#     telephones[dict_key] = dict_value
+#
+# print(f"입력 받은 연락처는 {telephones}입니다.")
+'''
+숫자를 입력한 횟수만큼 비어있는 list에 숫자를 추가하기
+문제 : 비있는 리스트 list01을 선언하고 그 안에 입력받은 횟수만큼 숫자를 추가하시오.
+
+함수 정의 : add_numbers()
+매개 변수 : 정수 n
+
+함수 호출
+add_numbers(last_num)           # call2유형
+print(add_numbers2(last_num))    # call4유형    
+
+실행 예
+숫자 몇 까지 입력하시겠습니까? >>> 10
+[1,2,3,4,5,6,7,8,9,10]
+'''
+# 함수 정의
+# def add_numbers(n):
+#     # 1. 반복문을 사용 (n만큼 입력돼야 하니까)
+#     # 2. element를 추가하는 .append(i)
+#     list01 = []         # 지역 변수
+#     for i in range(n):
+#         list01.append(i+1)
+#     print(list01)
+#
+# def add_numbers2(n):
+#     list02 = []         # 지역 변수
+#     for i in range(n):
+#         list02.append(i+1)
+#     return list02
+# 함수 호출
+# last_num = int(input("숫자 몇 까지 입력하시겠습니까? >>> "))
+# add_numbers(last_num)
+# print(add_numbers2(last_num))
+
+# add_numbers1 /2 의 차이점
+# for number in add_numbers2(last_num):
+#     print(number+1)
+
+# 이상의 코드는 가능하지만 -> add_numbers2(n)은 return으로 list형태를 반환하기 때문에
+# element에 대한 추가 연산 가능 -> ex) +1을 하건, 혹은 짝수만 걸러내건 etc...
+
+# for number in add_numbers(last_num):
+#     print(number+1)
+
+# 이상의 코드는 불가능합니다. -> add_numbers(n)의 경우 print 실행문으로 마무리되기 때문에 추가 연산 x
+
+'''
+짝수와 홀수의 개수 세기
+list를 입력 받아 짝수와 홀수의 개수를 세는 함수를 작성하시오.
+
+함수 정의
+함수 이름 : count_even_odd
+매개변수 : list numbers(요소는 모두 정수일 것)
+
+함수 호출
+count_even_odd([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+
+실행 예
+짝수의 개수 : 5개
+홀수의 개수 : 5개
+'''
+# def count_even_odd(numbers):
+#     even_count = 0
+#     odd_count = 0           # 지역 변수
+#
+#
+#
+# count_even_odd([1,2,3,4,5,6,7,8,9,10])
+
+# 기본적으로 실행 단계가 작동하는지 확인하고 함수화
 
 
-print(f"{month}월은 {last_date}일까지 있습니다.")
+def count_even_odd(numbers):
+    even_count = 0
+    odd_count = 0
+    for number in numbers:
+        if number % 2 == 0:
+            even_count += 1
+        else:
+            odd_count += 1
+
+    print(f"짝수의 개수 : {even_count}\n홀수의 개수 : {odd_count}")
+
+count_even_odd([1,2,3,4,5,6,7,8,9,10])
+
+# 반복문 돌리고 거기 내부에 조건문 돌려서 짝수면 even_count에 1씩 더하고,
+# 아니면 odd_count에 1씩 더하면 됩니다.
+
+
